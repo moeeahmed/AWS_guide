@@ -1,7 +1,20 @@
 # AWS guide
 
 ##Setting up an SSH connection with EC2 Instance
-1. 
+1. Launch EC2 instance on the AWS Console
+2. Choose the AMI (Amazon Machine Image) you want to use.
+3. Select the instance type and configure your instance settings.
+4. Create or select an existing key pair and download the private key file to your local machine.
+
+###To connect via SSH to local machine
+1. Open a terminal or command prompt on your local machine.
+2. Navigate to the directory where you saved your private key file.
+3. Change the permissions of the private key file using the command: chmod 400 keyname.pem
+4. Connect to the instance using the command: ssh -i keyname.pem ec2-user@public-dns-name
+
+###To install packages and carry out updates
+1. To update packages install on the instance, use the command: sudo yum update -y
+2. To install packages use the command:                         sudo yum install -y
 
 
 ##Setting up remote connection with VS Code
